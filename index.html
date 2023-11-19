@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            .text-10xl {
+                font-size: 20rem; /* 128px */
+                line-height: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="h-screen grid place-content-center bg-black">
+            <div class="text-10xl font-bold text-white" id="counter">1</div>
+        </div>
+        <script>
+            const element = document.getElementById("counter");
+            
+            const setText = (text) => {
+                element.innerHTML = text;
+            }
+
+            const count = () => {
+                setTimeout(() => {
+                    setText(counter);
+                    counter += 1;
+                    count();
+                }, 491);
+            }
+            
+            let counter = 1;
+            window.addEventListener("click", function(event) {
+                count();
+            });
+        </script>
+    </body>
+</html>
